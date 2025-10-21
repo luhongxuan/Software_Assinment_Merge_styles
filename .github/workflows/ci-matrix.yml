@@ -30,7 +30,7 @@ jobs:
     # 🧩 新增：matrix 支援多版本 Python 測試
     strategy:
       matrix:
-        python-version: [3.11, 3.12, 3.13]
+        python-version: [3.9, 3.11, 3.13]
       fail-fast: false   # 若一個版本失敗，其他版本仍會繼續測試
 
     steps:
