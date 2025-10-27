@@ -3,8 +3,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-merge-policy:
+    name: Validate Merge Policy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for Non-FF Merge
+        run: bash .github/scripts/check_ff.sh
+  
   build:
     name: Build Application
+    needs: check-merge-policy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
