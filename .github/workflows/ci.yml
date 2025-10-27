@@ -1,7 +1,7 @@
 name: CI Dev Deployment Test
 on:
-  push:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
   check-merge-policy:
